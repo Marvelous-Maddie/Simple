@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([]);
@@ -39,6 +42,7 @@ const Rooms = () => {
                 <td>{r.location_city}<br />{r.location_street} {r.location_num}</td>
                 <td>{r.location_floor}</td>
                 <td>{r.purpose}</td>
+                <td><Button variant="primary" className="mr-2"><FontAwesomeIcon icon={faEdit} /></Button><Button variant="primary"><FontAwesomeIcon icon={faTrash} /></Button></td>
               </tr>
             )
           })}
