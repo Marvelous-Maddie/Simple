@@ -1,4 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple
+
+A simple facility management system.
+
+## Technologies
+
+### Webclient
+
+- [Create React App](https://github.com/facebook/create-react-app)
+- [React Bootstrap](https://react-bootstrap.netlify.app/)
+
+### Server (not published on GitHub)
+- [ExpressJS](http://expressjs.com/)
+- [ElephantSQL](https://www.elephantsql.com/)
+
+## Upcoming features
+
+- Add to lists
+- Edit list entries
+- Delete list entries
+- Show employee/room by id
+- Log in/authentification
 
 ## Available Scripts
 
