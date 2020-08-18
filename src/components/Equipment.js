@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AddEquipment from "./AddEquipment";
+import DeleteEquipment from "./DeleteEquipment";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
@@ -46,7 +47,7 @@ const Equipment = () => {
                 <td>{i.description}</td>
                 <td>{i.status}</td>
                 <td>{i.latest_changes}</td>
-                <td><Button variant="primary" className="mr-2"><FontAwesomeIcon icon={faEdit} /></Button><Button variant="primary"><FontAwesomeIcon icon={faTrash} /></Button></td>
+                <td><Button variant="primary" className="mr-2"><FontAwesomeIcon icon={faEdit} /></Button><DeleteEquipment {...i}/></td>
               </tr>
             )
           })}

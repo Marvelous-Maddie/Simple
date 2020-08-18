@@ -8,10 +8,11 @@ import Button from "react-bootstrap/Button";
 
 const AddEquipment = () => {
   const [show, setShow] = useState(false);
-  const [equipment, addEquipment] = useState({category: "", item: "", description: "", status:""});
+  const [equipment, addEquipment] = useState({category: "", item: "", description: "", status:"", user_id:""});
 
   const handleChange = (e) => {
-    addEquipment({...equipment, [e.target.id]: e.target.value})
+    e.persist()
+    addEquipment(prevState => {return {...prevState, [e.target.name]: e.target.value}})
   };
 
   const handleSubmit = async (e) => {
@@ -27,7 +28,7 @@ const AddEquipment = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(equipment)
+          body: JSON.stringify({...equipment})
         });
         const data = await res.json();
         console.log(data)
@@ -48,7 +49,7 @@ const AddEquipment = () => {
             <Col xs={5}>
               <Form.Group controlId="category">
                 <Form.Label>Category</Form.Label>
-                <Form.Control as="select">
+                <Form.Control name="category" as="select">
                   <option>Please select</option>
                   <option>furnishing</option>
                   <option>stationary</option>
@@ -61,14 +62,14 @@ const AddEquipment = () => {
             <Col xs={5}>
               <Form.Group controlId="item">
                 <Form.Label>Item</Form.Label>
-                <Form.Control type="text" />
+                <Form.Control name="item" type="text" />
               </Form.Group>
             </Col>
 
             <Col>
               <Form.Group controlId="status">
                 <Form.Label>Status</Form.Label>
-                <Form.Control as="select">
+                <Form.Control name="status" as="select">
                   <option>Please select</option>
                   <option>in use</option>
                   <option>not in use</option>
@@ -82,7 +83,7 @@ const AddEquipment = () => {
 
           <Form.Group controlId="description">
             <Form.Label>Description</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control name="description" type="text" />
           </Form.Group>
 
           <hr />
