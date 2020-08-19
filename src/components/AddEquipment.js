@@ -18,7 +18,7 @@ const AddEquipment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {category, item, description, status} = equipment;
-
+    console.log(equipment)
     if(!category || !item || !description || !status) {
       alert("Please fill in all fields!")
     } else {
@@ -28,7 +28,7 @@ const AddEquipment = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({...equipment})
+          body: JSON.stringify(equipment)
         });
         const data = await res.json();
         console.log(data)

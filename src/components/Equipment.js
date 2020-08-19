@@ -18,6 +18,29 @@ const Equipment = () => {
       .catch(alert);
   };
 
+  const postData = async () => {
+    const res = await fetch("https://salty-refuge-24283.herokuapp.com/equipment",
+      {
+        method: "post",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "category": "furnishing",
+              "item": "desk",
+              "description": "hello",
+              "status": "in use",
+              "user_id": 657328
+        })
+      }
+    )
+    res
+      .json()
+      .then(res => setEquipment([...equipment, res]))
+      .catch(alert);
+  };
+
   useEffect(() => {
     fetchData();
   },[]);
@@ -25,6 +48,7 @@ const Equipment = () => {
   return(
     <Container className="mx-auto">
       <h2 className="my-5">Equipment</h2>
+      <button onClick={postData}>Click</button>
       <AddEquipment />
       <Table striped bordered hover size="sm">
         <thead>
