@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { EquipmentContext } from "../context/EquipmentContext";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Form from "react-bootstrap/Form";
@@ -7,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 const AddEquipment = () => {
+  const {create} = useContext(EquipmentContext);
   const [show, setShow] = useState(false);
   const [equipment, addEquipment] = useState({category: "", item: "", description: "", status:"", user_id:""});
 
@@ -15,30 +17,9 @@ const AddEquipment = () => {
     addEquipment(prevState => {return {...prevState, [e.target.name]: e.target.value}})
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const {category, item, description, status} = equipment;
-    console.log(equipment)
-    if(!category || !item || !description || !status) {
-      alert("Please fill in all fields!")
-    } else {
-      try {
-        const res = await fetch("https://salty-refuge-24283.herokuapp.com/equipment", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(equipment)
-        });
-        const data = await res.json();
-        console.log(data)
-      }
-      catch (err) {
-        console.log(err)
-      }
-    }
-  }
-  //clear input fields
+  const handleSubmit = (e) => {
+    create(e, equipment)
+  };
 
   return (
     <Container>

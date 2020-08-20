@@ -1,20 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import EquipmentContext from "../context/EquipmentContext";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const DeleteEquipment = (id) => {
+  const {discard} = useContext(EquipmentContext);
+
   const handleClick = (e) => {
-    const confirmation = window.confirm(`Are you sure you want to delete this entry?`);
-    fetch(`https://salty-refuge-24283.herokuapp.com/equipment/${id}`, {
-      method:"delete"
-    })
-    .catch((err) => {
-      console.error("Error", err)
-      alert("Failed to delete")
-    });
-    alert(`Successfully deleted`)
-  }
+    if(window.confirm(`Are you sure you want to delete this entry?`)) {
+      discard(id)
+    }
+  };
 
   return (
     <Button variant="primary" onClick={handleClick}><FontAwesomeIcon icon={faTrash} /></Button>
