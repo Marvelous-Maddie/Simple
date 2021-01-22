@@ -48,7 +48,7 @@ const create = (e, value) => {
 //tbd
 
 //Deletet
-const discard = (id) => {
+const discard = id => {
   try {
     fetch(`https://salty-refuge-24283.herokuapp.com/equipment/${id}`, {
     method:"delete"
