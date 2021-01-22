@@ -36,7 +36,7 @@ const Equipment = () => {
                 <td>{i.description}</td>
                 <td>{i.status}</td>
                 <td>{i.latest_changes}</td>
-                <td><Button variant="primary" className="mr-2"><FontAwesomeIcon icon={faEdit} /></Button><DeleteEquipment {...i}/></td>
+                <td><Button variant="primary" className="mr-2"><FontAwesomeIcon icon={faEdit} /></Button><DeleteEquipment id={i.id}/></td>
               </tr>
             )
           })}
