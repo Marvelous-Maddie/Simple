@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const DeleteEquipment = id => {
-  console.log(id.id);
   const {discard} = useContext(EquipmentContext);
 
   const handleClick = (e) => {

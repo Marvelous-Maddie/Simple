@@ -27,16 +27,16 @@ const EquipmentContextProvider = ({children}) => {
     } else {
       try {
         const res = fetch("https://salty-refuge-24283.herokuapp.com/equipment", {
+        /*const res = fetch("http://localhost:4000/equipment", {*/
           method: "POST",
           headers: {
             "Accept": "application/json, text/plain, */*",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({category, item, description, status})
-        });
-        res
-          .json()
-          .then(res => setEquipment([...equipment, res]))
+        })
+        .then (res => res.json())
+        .then(res => setEquipment([...equipment, res]))
       }
       catch (err) {
         console.log(err)
