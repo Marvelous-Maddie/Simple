@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const EmployeesContext = createContext();
+export const EmployeeContext = createContext();
 
-const EmployeesContextProvider = ({children}) => {
+const EmployeeContextProvider = ({children}) => {
   const [employees, setEmployees] = useState([]);
   
 //Read
@@ -11,7 +11,6 @@ const EmployeesContextProvider = ({children}) => {
       const res = fetch("https://salty-refuge-24283.herokuapp.com/employees")
       .then(res => res.json())
       .then(res => setEmployees(res))
-      .then(console.log(employees))
     }
     catch (err) {
       console.log(err)
@@ -64,10 +63,10 @@ const discard = id => {
   };
 
   return (
-      <EmployeesContext.Provider value= {{employees, setEmployees, create, discard}}>
+      <EmployeeContext.Provider value= {{employees, setEmployees, create, discard}}>
         {children}
-      </EmployeesContext.Provider>
+      </EmployeeContext.Provider>
   )
 };
 
-export default EmployeesContextProvider
+export default EmployeeContextProvider

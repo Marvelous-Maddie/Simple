@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const RoomsContext = createContext();
+export const RoomContext = createContext();
 
-const RoomsContextProvider = ({children}) => {
+const RoomContextProvider = ({children}) => {
   const [rooms, setRooms] = useState([]);
 
 //Read
@@ -63,10 +63,10 @@ const RoomsContextProvider = ({children}) => {
   };
 
   return (
-      <RoomsContext.Provider value= {{rooms, setRooms, create, discard}}>
+      <RoomContext.Provider value= {{rooms, setRooms, create, discard}}>
         {children}
-      </RoomsContext.Provider>
+      </RoomContext.Provider>
   )
 };
 
-export default RoomsContextProvider
+export default RoomContextProvider

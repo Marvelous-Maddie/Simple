@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { RoomsContext } from "../context/RoomsContext";
+import { RoomContext } from "../context/RoomContext";
 import AddRoom from "./AddRoom";
 import DeleteRoom from "./DeleteRoom";
 import Container from "react-bootstrap/Container";
@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Rooms = () => {
-  const {rooms} = useContext(RoomsContext);
+  const {rooms} = useContext(RoomContext);
   
   /* const [rooms, setRooms] = useState([]);
 

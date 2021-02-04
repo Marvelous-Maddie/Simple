@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { EmployeesContext } from "../context/EmployeesContext";
+import { EmployeeContext } from "../context/EmployeeContext";
 import AddEmployee from "./AddEmployee";
 import DeleteEmployee from "./DeleteEmployee";
 import Container from "react-bootstrap/Container";
@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Employees = () => {
-  const {employees} = useContext(EmployeesContext);
+  const {employees} = useContext(EmployeeContext);
   
   /*const [employees, setEmployees] = useState([]);
 
