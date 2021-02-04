@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { EmployeesContext } from "../context/EmployeesContext";
-import AddEmployees from "./AddEmployees";
-import DeleteEmployees from "./DeleteEmployees";
+import AddEmployee from "./AddEmployee";
+import DeleteEmployee from "./DeleteEmployee";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
@@ -11,7 +11,7 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 const Employees = () => {
   const {employees} = useContext(EmployeesContext);
   
-  /* const [employees, setEmployees] = useState([]);
+  /*const [employees, setEmployees] = useState([]);
 
   const fetchData = async () => {
     const res = await fetch("https://salty-refuge-24283.herokuapp.com/employees");
@@ -25,7 +25,7 @@ const Employees = () => {
 
   useEffect(() => {
     fetchData();
-  },[]); */
+  },[]);    */
 
   return(
     <Container className="mx-auto">

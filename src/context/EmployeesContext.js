@@ -11,6 +11,7 @@ const EmployeesContextProvider = ({children}) => {
       const res = fetch("https://salty-refuge-24283.herokuapp.com/employees")
       .then(res => res.json())
       .then(res => setEmployees(res))
+      .then(console.log(employees))
     }
     catch (err) {
       console.log(err)
