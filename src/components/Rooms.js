@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { RoomsContext } from "../context/RoomsContext";
+import AddRoom from "./AddRoom";
+import DeleteRoom from "./DeleteRoom";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
@@ -6,7 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Rooms = () => {
-  const [rooms, setRooms] = useState([]);
+  const {rooms} = useContext(RoomsContext);
+  
+  /* const [rooms, setRooms] = useState([]);
 
   const fetchData = async () => {
     const res = await fetch("https://salty-refuge-24283.herokuapp.com/rooms");
@@ -20,7 +25,7 @@ const Rooms = () => {
 
   useEffect(() => {
     fetchData();
-  },[]);
+  },[]); */
 
   return(
     <Container className="mx-auto">
