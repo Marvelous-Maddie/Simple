@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 const AddEmployee = () => {
   const {create} = useContext(EmployeeContext);
   const [show, setShow] = useState(false);
-  const [employee, addEmployee] = useState({id: "", lastName: "", firstName: "", department: "", position:"", roomId: ""});
+  const [employee, addEmployee] = useState({id: 0, lastName: "", firstName: "", department: "", position:"", roomId: ""});
 
   const handleChange = (e) => {
     e.persist()
