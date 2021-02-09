@@ -20,9 +20,9 @@ const EmployeeContextProvider = ({children}) => {
 //Create
   const create = (e, value) => {
     e.preventDefault();
-    const {lastName, firstName, department, position, roomId} = value;
+    const {id, lastName, firstName, department, position, roomId} = value;
 
-    if(!lastName || !firstName || !department || !position) {
+    if(!id || !lastName || !firstName || !department || !position) {
       alert("Please fill in all fields!")
     } else {
       try {
@@ -33,9 +33,9 @@ const EmployeeContextProvider = ({children}) => {
             "Accept": "application/json, text/plain, */*",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({lastName, firstName, department, position, roomId})
+          body: JSON.stringify({id, lastName, firstName, department, position, roomId})
         })
-        .then (res => res.json())
+        .then(res => res.json())
         .then(res => setEmployees([...employees, res]))
       }
       catch (err) {

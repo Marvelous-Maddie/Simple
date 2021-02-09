@@ -30,6 +30,7 @@ const Employees = () => {
   return(
     <Container className="mx-auto">
       <h2 className="my-5">Employees</h2>
+      <AddEmployee />
       <Table striped bordered hover size="sm">
         <thead>
           <tr>

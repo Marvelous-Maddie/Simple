@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 const AddEquipment = () => {
   const {create} = useContext(EquipmentContext);
   const [show, setShow] = useState(false);
-  const [equipment, addEquipment] = useState({category: "", item: "", description: "", status:"", user_id:""});
+  const [equipment, addEquipment] = useState({category: "", item: "", description: "", status:"", userId:""});
 
   const handleChange = (e) => {
     e.persist()

@@ -35,7 +35,7 @@ const EquipmentContextProvider = ({children}) => {
           },
           body: JSON.stringify({category, item, description, status})
         })
-        .then (res => res.json())
+        .then(res => res.json())
         .then(res => setEquipment([...equipment, res]))
       }
       catch (err) {
