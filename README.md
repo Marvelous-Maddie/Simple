@@ -13,11 +13,15 @@ A simple facility management system.
 - [ExpressJS](http://expressjs.com/)
 - [ElephantSQL](https://www.elephantsql.com/)
 
+## Features
+
+- Display lists
+- Add to lists
+- Delete list entries
+
 ## Upcoming features
 
-- Add to lists
 - Edit list entries
-- Delete list entries
 - Show employee/room by id
 - Log in/authentification
 
